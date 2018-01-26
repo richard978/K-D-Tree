@@ -20,8 +20,7 @@ int n = 17770, d = 50;
 int qn = 1000;
 #endif
 
-//改过的！！！！
-int main() {  // main函数不允许修改 
+int main() {
 	char data_path[L], query_path[L];
 	char index_path[L], output_path1[L], output_path2[L];
 	float** data = NULL;
@@ -33,11 +32,11 @@ int main() {  // main函数不允许修改
 	sprintf(output_path1, "%s/dst/KDTree_answer2.txt", dataset);
 	//sprintf(output_path2, "%s/dst/RPTree_answer.txt", dataset);
 
-	if (!read_data(n, d, data, data_path)) {  //读入数据 
+	if (!read_data(n, d, data, data_path)) {
 		return 1;
 	}
 	
-	KDTree kd_Tree1;  //K-D树的检测
+	KDTree kd_Tree1;  //Detect k-d tree
 	//kd_Tree1.buildTree(n, d, data);
 	//kd_Tree1.storeTree(index_path);
 	kd_Tree1.restoreTree(index_path);
@@ -66,7 +65,7 @@ int main() {  // main函数不允许修改
 	cout<<"Query time: "<<(double)(endTime-startTime)/CLOCKS_PER_SEC<<"s"<<endl;
 	fclose(fout);
 
-	/*RPTree rp_Tree1;  //RP树的检测
+	/*RPTree rp_Tree1;
 	rp_Tree1.buildTree(n, d, data);
 	rp_Tree1.storeTree(index_path);
 
