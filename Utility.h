@@ -9,7 +9,7 @@
 using namespace std;
 #define L 256
 
-static bool read_data(  // 读取数据专用函数，同学们不要修改 
+static bool read_data(
 	int n,
 	int d,
 	float** &data,
@@ -26,7 +26,7 @@ static bool read_data(  // 读取数据专用函数，同学们不要修改
 	for (int i = 0; i < n; i++) {
 		data[i] = new float[d + 1];
 		fscanf(fin, "%d", &id);
-		data[i][d] = id;   // d号位置用来存储此数据点在源文件中的编号 
+		data[i][d] = id;
 		for (int j = 0; j < d; j++) {
 			fscanf(fin, "%f", &data[i][j]);
 		}
@@ -38,9 +38,6 @@ static bool read_data(  // 读取数据专用函数，同学们不要修改
 	return true;
 }
 
-/*
-这里可以添加代码
-*/
 static float getDistance(vector<float> query, vector<float> node){
 	if (query.size() != node.size()){
 		cout << "Dimension not match" << endl;
