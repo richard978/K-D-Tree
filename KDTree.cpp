@@ -5,8 +5,6 @@
 #include <time.h>
 using namespace std;
 
-/*在这里实现KD树的各个函数*/
-
 KDTree::KDTree(){
 	vector<float> v;
 	root = NULL;
