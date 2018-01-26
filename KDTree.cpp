@@ -5,7 +5,7 @@
 #include <time.h>
 using namespace std;
 
-/*在这里实现KD树的各个函数*/
+/*鍦ㄨ繖閲屽疄鐜癒D鏍戠殑鍚勪釜鍑芥暟*/
 
 KDTree::KDTree(){
 	vector<float> v;
@@ -152,7 +152,7 @@ int KDTree::_search(vector<float> query, Node* tree, int d){
 		}
 		int dimen = back->dimen;
 		//if the circle and hyper-space intersect, enter the other child
-		/*if(fabs(back->mid - query[dimen]) < sqrt(dist)){
+		if(fabs(back->mid - query[dimen]) < sqrt(dist)){
 			if (query[dimen] <= back->mid)
 				point = back->right;
 			else
@@ -167,7 +167,7 @@ int KDTree::_search(vector<float> query, Node* tree, int d){
 						point = point->right;
 				}
 			}
-		}*/
+		}
 	}
 	return nearest->value[d];
 }
